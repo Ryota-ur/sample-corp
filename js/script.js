@@ -1,4 +1,4 @@
-
+new WOW().init();
 
 jQuery('.drawer-icon').on('click',function(e){
   e.preventDefault();
@@ -103,33 +103,20 @@ jQuery('.drawer-icon').on('click',function(e){
     1000);
     });
 
-
 // スクロール検知
 jQuery(window).on("scroll", function() {
-   if (100 < jQuery(this).scrollTop()) {
-   jQuery('.page-top').removeClass('DownMove');
-   jQuery('.page-top').addClass('UpMove');
+
+  // トップから300px以上スクロールしたら
+   if (300 < jQuery(this).scrollTop()) {
+  
+  // is-showクラスをつける
+   jQuery('.page-top').addClass( 'is-show' );
    } else {
-    if(jQuery('.page-top').hasClass('UpMove')){
-      jQuery('.page-top').removeClass('UpMove');
-      jQuery('.page-top').addClass('DownMove');
+  
+  // 300pxを下回ったらis-showクラスを削除
+   jQuery('.page-top').removeClass( 'is-show' );
    }
-   }});
-
-
-// #page-topをクリックした際の設定
-jQuery('.page-top').click(function () {
-	var scroll = $(window).scrollTop(); //スクロール値を取得
-	if(scroll > 0){
-		jQuery(this).addClass('floatAnime');//クリックしたらfloatAnimeというクラス名が付与
-        $('body,html').animate({
-            scrollTop: 0
-        }, 500,function(){//スクロールの速さ。数字が大きくなるほど遅くなる
-          jQuery('.page-top').removeClass('floatAnime');//上までスクロールしたらfloatAnimeというクラス名を除く
-        });	
-	}
-    return false;//リンク自体の無効化
-});
+   });
 
   
 
