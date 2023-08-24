@@ -2012,129 +2012,19 @@ page-top
 ***************************/
 .page-top {
   position: fixed;
-  right: 10px;
-  bottom: 0px;
+  right: 20px;
+  bottom: 20px;
   z-index: 2;
   opacity: 0;
-  /*画像の切り替えと動き*/
+  visibility: hidden;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
-.page-top.UpMove {
-  -webkit-animation: UpAnime 1s forwards;
-          animation: UpAnime 1s forwards;
+.page-top img {
+  width: 50px;
+  height: 50px;
 }
-@-webkit-keyframes UpAnime {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes UpAnime {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-.page-top.DownMove {
-  -webkit-animation: DownAnime 1s forwards;
-          animation: DownAnime 1s forwards;
-}
-@-webkit-keyframes DownAnime {
-  from {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-  }
-}
-@keyframes DownAnime {
-  from {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(150px);
-            transform: translateY(150px);
-  }
-}
-.page-top a {
-  display: block;
-  width: 100px;
-  height: 100px;
-  text-decoration: none;
-  /*背景画像の指定*/
-  background: url("../img/1547368476.png") no-repeat center;
-  background-size: contain;
-}
-.page-top.floatAnime a {
-  width: 100px;
-  height: 130px;
-  /*背景画像の指定*/
-  background: url("../img/1535710153-2.png") no-repeat center;
-  background-size: contain;
-  /*アニメーションの指定*/
-  -webkit-animation: floatAnime 1s linear infinite;
-          animation: floatAnime 1s linear infinite;
-  opacity: 0;
-}
-@-webkit-keyframes floatAnime {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-  25% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-    opacity: 1;
-  }
-}
-@keyframes floatAnime {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-  25% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-    opacity: 1;
-  }
+.page-top.is-show {
+  opacity: 1;
+  visibility: visible;
 }
